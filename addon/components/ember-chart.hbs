@@ -1,7 +1,10 @@
-<canvas
-  width={{@width}}
-  height={{@height}}
-  {{did-insert this.drawChart}}
-  {{did-update this.updateChart @data @options}}
->
-</canvas>
+<div class="chart">
+  <canvas
+    class="chart-canvas"
+    width={{@width}}
+    height={{@height}}
+    {{did-insert this.drawChart}}
+    {{did-update this.updateChart @data @options}}
+  >
+  </canvas>
+</div>
