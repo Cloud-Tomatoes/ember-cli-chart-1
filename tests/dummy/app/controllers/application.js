@@ -67,7 +67,7 @@ export default Controller.extend({
       ]
     };
   }),
-  barData: function() {
+  barData: computed(function() {
     return {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [
@@ -89,8 +89,8 @@ export default Controller.extend({
         }
       ]
     };
-  },
-  radarData: function() {
+  }),
+  radarData: computed(function() {
     return {
       labels: [
         "Eating",
@@ -124,8 +124,8 @@ export default Controller.extend({
         }
       ]
     };
-  },
-  polarAreaData: function() {
+  }),
+  polarAreaData: computed(function() {
     return {
       datasets: [
         {
@@ -142,5 +142,5 @@ export default Controller.extend({
       ],
       labels: ["Red", "Green", "Yellow", "Grey", "Blue"]
     };
-  }
+  })
 });
