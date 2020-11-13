@@ -1,8 +1,35 @@
 <h2 id="title">Testing the ChartJS Component</h2>
 
-<div>
-  <h3>Bar Chart</h3>
-  <EmberChart @type="bar" @data={{this.barData}} @width={{600}} @height={{200}} @options={{this.options}} />
+<div class="flex">
+  <div class="circle-chart-card">
+    <h3>Doughnut Chart with Legend</h3>
+    <EmberChart @type="doughnut" @data={{this.pieData}} @width={{200}} @height={{200}} @options={{this.options}} />
+  </div>
+
+  <div class="circle-chart-card">
+    <h3>Pie Chart 100px height</h3>
+    <EmberChart @type="pie" @data={{this.this.pieData}} @width={{200}} @height={{100}} @options={{this.options}} />
+  </div>
+
+  <div class="circle-chart-card">
+    <h3>Chart</h3>
+    <p>
+      Chart should have
+      <strong>height</strong> property <br>
+      set to a value.
+      E.g: 200
+    </p>
+    <p>Otherwise it will default to 150px height
+    </p>
+  </div>
+
+</div>
+
+<div class="flex">
+  <div>
+    <h3>Bar Chart</h3>
+    <EmberChart @type="bar" @data={{this.barData}} @width={{600}} @height={{200}} @options={{this.options}} />
+  </div>
 </div>
 
 <div class="flex">
@@ -10,43 +37,6 @@
     <h3>Line Chart</h3>
     <EmberChart @type="line" @data={{this.lineData}} @width={{600}} @height={{200}} @options={{this.options}} />
   </div>
-  <div>
-    <div>
-      <h3>Line Chart Data Update</h3>
-      <ul>
-        <li><Input @value={{this.lineValue1}} @type="number" /></li>
-        <li><Input @value={{this.lineValue2}} @type="number" /></li>
-      </ul>
-    </div>
-    <div>
-      <h3>Line Chart Label Update</h3>
-      <ul>
-        <li><Input @value={{this.lineLabel}} @type="text" /></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="flex">
-  <div>
-    <h3>Doughnut Chart with Legend</h3>
-    <EmberChart @type="doughnut" @data={{this.pieData}} @width={{200}} @height={{200}} @options={{this.options}} />
-  </div>
-
-  <div>
-    <h3>Pie Chart</h3>
-    <EmberChart @type="pie" @data={{this.this.pieData}} @width={{200}} @height={{200}} @options={{this.options}} />
-  </div>
-
-  <div>
-    <h3>Pie Chart Update</h3>
-    <ul>
-      <li><Input @value={{this.pieValue1}} @type="number" /></li>
-      <li><Input @value={{this.pieValue2}} @type="number" /></li>
-      <li><Input @value={{this.pieValue3}} @type="number" /></li>
-    </ul>
-  </div>
-
 </div>
 
 <div class="flex">
