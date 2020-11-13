@@ -1,8 +1,9 @@
-<div class="chart">
+<div class="chart" ...attributes>
   <canvas
     class="chart-canvas"
     width={{@width}}
     height={{@height}}
+    data-toggle="legend"
     {{did-insert this.drawChart}}
     {{did-update this.updateChart @data @options}}
   >
