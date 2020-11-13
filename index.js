@@ -27,6 +27,7 @@ module.exports = {
     // Dashkit theme
     [
       'css/style.min.css',
+      'js/charts-dark.min.js',
       'js/charts.min.js',
       'js/chart-extension.min.js'
     ].forEach( (f) => {
