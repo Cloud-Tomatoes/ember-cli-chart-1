@@ -41,6 +41,13 @@
 
 <div class="flex">
   <div>
+    <h3>SparkLine Chart</h3>
+    <EmberChart @type="line" @data={{this.sparkLine}} @width={{600}} @height={{200}} @options={{this.sparkLineOptions}} />
+  </div>
+</div>
+
+<div class="flex">
+  <div>
     <h3>Radar Chart</h3>
     <EmberChart @type="radar" @data={{this.radarData}} @width={{400}} @height={{400}} @options={{this.options}} />
   </div>
