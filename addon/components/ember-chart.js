@@ -1,14 +1,11 @@
 /* global Chart */
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class EmberChart extends Component {
 
-  constructor() {
-    super(...arguments);
-
-    this.plugins = this.plugins || [];
-  }
+  @tracked legend = undefined;
 
   @action
   drawChart(element) {
@@ -16,6 +13,9 @@ export default class EmberChart extends Component {
     let chart = new Chart(element, {
       type, data, options, plugins
     });
+
+    if (this.args.useLegend)
+      this.legend = chart.generateLegend();
 
     this.chart = chart;
   }
@@ -34,9 +34,11 @@ export default class EmberChart extends Component {
         chart.update(0);
       }
 
-      if (this.customLegendElement) {
-        this.customLegendElement.innerHTML = chart.generateLegend();
-      }
+      const content = chart.generateLegend();
+      if (this.customLegendElement)
+        this.customLegendElement.innerHTML = content;
+      else if (this.args.useLegend)
+        this.legend = content;
     }
   }
 

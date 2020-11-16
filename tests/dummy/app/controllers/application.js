@@ -7,6 +7,27 @@ export default Controller.extend({
       responsive: false
     };
   }),
+  sparkLineOptions: computed(function() {
+    return {
+      scales: {
+         yAxes: [{
+           display: false
+         }],
+         xAxes: [{
+           display: false
+         }]
+       },
+       elements: {
+         line: {
+           borderWidth: 2,
+           borderColor: '#D2DDEC'
+         },
+         point: {
+           hoverRadius: 0
+         }
+       }
+     }
+  }),
   pieValue1: 300,
   pieValue2: 50,
   pieValue3: 100,
@@ -67,7 +88,15 @@ export default Controller.extend({
       ]
     };
   }),
-  barData: function() {
+  sparkLine: computed(function() {
+    return {
+      labels: new Array(12),
+      datasets: [{
+        data: [0, 15, 10, 25, 30, 15, 40, 50, 80, 60, 55, 65]
+      }]
+    }
+  }),
+  barData: computed(function() {
     return {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [
@@ -89,8 +118,8 @@ export default Controller.extend({
         }
       ]
     };
-  },
-  radarData: function() {
+  }),
+  radarData: computed(function() {
     return {
       labels: [
         "Eating",
@@ -124,8 +153,8 @@ export default Controller.extend({
         }
       ]
     };
-  },
-  polarAreaData: function() {
+  }),
+  polarAreaData: computed(function() {
     return {
       datasets: [
         {
@@ -142,5 +171,5 @@ export default Controller.extend({
       ],
       labels: ["Red", "Green", "Yellow", "Grey", "Blue"]
     };
-  }
+  })
 });
